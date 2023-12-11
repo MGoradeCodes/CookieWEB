@@ -1,0 +1,24 @@
+.recipe{
+    position: relative;
+    white-space: pre-line;
+    font-size: 28px;
+    font-family: "Comic Sans MS";
+    color: yellow;
+}
+.title{
+    font-size: 32px;
+    text-align: center;
+
+}
+h1 {
+    color: black; /* Set the default color for the h1 element */
+}
+h1 .green-text {
+    color: green; /* Style the text within the h1 element with green color */
+}
+h1::before, h1::after {
+    content: "||"; /* Set the content for the ::before and ::after pseudo-elements */
+    color: Red; /* Set the color for the symbols */
+    font-size: xx-large;
+    font-weight: bolder;
+}

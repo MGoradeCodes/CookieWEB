@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="CSS/CheckAstyles.css">
+    <style>
+        /* Center the result message horizontally */
+        #searchResult {
+            text-align: center;
+            font-size: 24px; /* Change the font size to your preference */
+            color: #007bff; /* Change the color to your preference (here, it's blue) */
+        }
+    </style>
+    <script>
+        // Define a list of people with Aadhaar cards
+        var aadhaarList = [
+            "Om",
+            "Aarya",
+            "Manthan"
+            // Add more names to the list
+        ];
+
+        function search() {
+
+            // Check if the entered name is in the Aadhaar list
+            if (aadhaarList.includes(query)) {
+                result.innerHTML = query + " has an Aadhaar card.";
+            } else {
+                result.innerHTML = query + " doesn't have an Aadhaar card.";
+            }
+        }
+    </script>
+</head>
+<body background="Images/Chocolate_chipi.jpg">
+    <h1>Search Engine</h1>
+    <input type="text" id="searchInput" placeholder="Enter a name">
+    <button onclick="search()">Search</button>
+    <div id="searchResult"></div>
+</body>
+</html>

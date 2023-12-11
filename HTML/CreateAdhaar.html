@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Aadhaar Card</title>
+    <script src="/Javascript/CheckAdhaar.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        var nameProfessionMap = {
+            "Om": "President",
+            "Aarya": "CookieGod",
+            "Manthan": "PM"
+            // Add more name-profession mappings as needed
+        };
+
+        function generateAadhaar() {
+            var fullName = document.getElementById("fullName").value;
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            var claimedProfession = document.getElementById("profession").value;
+
+            var inputValue = document.getElementById("fullName").value;
+            console.log("Entered value: " + inputValue);
+            
+            if (!fullName || !mobileNumber || !claimedProfession) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            var actualProfession = nameProfessionMap[fullName] || "Other";
+
+            if (actualProfession === claimedProfession) {
+                openNewPage();
+            } else {
+                alert("Claimed profession does not match the actual profession (" + actualProfession + "). Please correct it.");
+            }
+        }
+
+        function openNewPage() {
+            var newWindow = window.open("", "_blank");
+            newWindow.document.write("<h1>We will generate your Aadhaar shortly</h1>");
+            newWindow.document.close();
+        
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Create Aadhaar Card</h1>
+    <form>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="text" id="mobileNumber" required>
+
+        <label for="profession">Profession:</label>
+        <select id="profession" required>
+            <option value="">Select a profession</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Teacher">Teacher</option>
+            <option value="President">President</option>
+            <option value="CookieGod">CookieGod</option>
+            <option value="PM">PM</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <button type="submit" onclick="generateAadhaar()">Generate Aadhaar</button>
+    </form>
+</body>
+</html>

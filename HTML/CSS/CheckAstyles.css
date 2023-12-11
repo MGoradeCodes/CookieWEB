@@ -1,0 +1,14 @@
+h1{
+    font-size: 45px;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    color: yellow;
+}
+#searchInput{
+    display: block;  /* Make Block type */
+    margin: auto;    /* Auto margin */
+}
+button{
+    display: block;  /* Make Block type */
+    margin: auto;    /* Auto margin */ 
+}
